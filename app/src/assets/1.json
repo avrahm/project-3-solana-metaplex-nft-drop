@@ -1,0 +1,19 @@
+{
+  "name": "DJ Execute on paper",
+  "symbol": "",
+  "image": "1.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "1.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "5U7SCuN6csYgQCW6PKsbZHWTPXsGYqXaPoxHP2aW5HQk",
+        "share": 100
+      }
+    ]
+  }
+}

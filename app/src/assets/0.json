@@ -1,0 +1,19 @@
+{
+  "name": "Skateboard to school",
+  "symbol": "",
+  "image": "0.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "0.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "5U7SCuN6csYgQCW6PKsbZHWTPXsGYqXaPoxHP2aW5HQk",
+        "share": 100
+      }
+    ]
+  }
+}
