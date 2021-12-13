@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import CandyMachine from './CandyMachine';
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
@@ -9,7 +10,6 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const App = () => {
 
   const [walletAddress, setWalletAddress] = useState(null);
-
 
   // check if wallet is connected
   const checkIfWalletIsConnected = async () => {
@@ -48,6 +48,7 @@ const App = () => {
     return (
       <div>
         Connected!
+        {walletAddress && <CandyMachine walletAddress={window.solana} />}
       </div>
     )
   };
