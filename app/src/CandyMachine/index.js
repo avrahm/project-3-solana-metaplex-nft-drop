@@ -380,7 +380,7 @@ const CandyMachine = ({ walletAddress }) => {
     }
 
     // Else let's just return the current drop date
-    return <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
+    return <p>{`Drop Date Completed: ${machineStats.goLiveDateTimeString}`}</p>;
   };
 
 
