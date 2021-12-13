@@ -26,6 +26,9 @@ const MAX_CREATOR_LEN = 32 + 1 + 1;
 
 const CandyMachine = ({ walletAddress }) => {
 
+  // Add state property inside your component like this
+  const [machineStats, setMachineStats] = useState(null);
+
   useEffect(() => {
     getCandyMachineState();
   }, []);
@@ -75,6 +78,15 @@ const CandyMachine = ({ walletAddress }) => {
     ).toLocaleDateString()} @ ${new Date(
       goLiveData * 1000
     ).toLocaleTimeString()}`;
+
+    // Add this data to your state to render
+    setMachineStats({
+      itemsAvailable,
+      itemsRedeemed,
+      itemsRemaining,
+      goLiveData,
+      goLiveDateTimeString,
+    });
 
     console.log({
       itemsAvailable,
@@ -311,14 +323,19 @@ const CandyMachine = ({ walletAddress }) => {
   };
 
   return (
-    <div className="machine-container">
-      {/* <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p> */}
-      {/* <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p> */}
-      <button className="cta-button mint-button" onClick={mintToken}>
-        Mint NFT
-      </button>
-    </div>
-  );
+    machineStats && (
+      <div className="machine-container">
+
+        <div>
+          <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>
+          <p>{`Items Minted: ${machineStats.itemsRedeemed} / ${machineStats.itemsAvailable}`}</p>
+        </div>
+        <button className="cta-button mint-button" onClick={mintToken}>
+          Mint NFT
+        </button>
+      </div>
+    ));
+
 };
 
 export default CandyMachine;
